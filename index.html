@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#04070F">
 <link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://synapse-system-solutions.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://synapse-system-solutions.github.io/">
@@ -17,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap">
 <style>
-/* Concept: a company as a nervous system. A live particle S fires signals; scroll turns scattered chats into one flow.
+/* Concept: a company as a nervous system. The Synapse mark, live in particles, fires signals; scroll turns scattered chats into one flow.
    Night ground, azure signal, one cool paper scene for "order". Clash Display shouts, General Sans reads. */
 @font-face{font-family:"Clash Display";src:url("fonts/cd-500.woff2") format("woff2");font-weight:500;font-display:swap}
 @font-face{font-family:"Clash Display";src:url("fonts/cd-600.woff2") format("woff2");font-weight:600;font-display:swap}
@@ -77,10 +80,9 @@ html.has-cursor body,html.has-cursor a,html.has-cursor button,html.has-cursor su
 html.js:not(.reduced) #loader{display:flex;animation:lgone .01s 6s forwards}
 @keyframes lgone{to{visibility:hidden;opacity:0}}
 #loader.done{transform:translateY(-100%)}
-#loader svg{width:92px;height:92px}
-#loader .la,#loader .lb{stroke-dasharray:100;stroke-dashoffset:100;animation:draw .9s var(--ease) forwards}
-#loader .lb{animation-delay:.22s}
-#loader .ln{transform-box:fill-box;transform-origin:center;transform:scale(0);animation:pop .5s var(--ease) .7s forwards}
+#loader svg{width:126px;height:92px}
+#loader .la{stroke-dasharray:100 110;stroke-dashoffset:100;animation:draw .5s var(--ease) forwards}
+#loader .ln{transform-box:fill-box;transform-origin:center;transform:scale(0) rotate(-90deg);animation:pop .6s var(--ease) .45s forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes pop{to{transform:scale(1)}}
 #loaderNum{font:500 13px var(--body);letter-spacing:.35em;color:var(--fog);font-variant-numeric:tabular-nums}
@@ -90,9 +92,11 @@ html.js:not(.reduced) #loader{display:flex;animation:lgone .01s 6s forwards}
 .nav{position:fixed;top:0;left:0;right:0;z-index:60;padding-top:env(safe-area-inset-top,0px);transition:transform .6s var(--ease),color .4s}
 .nav.hide{transform:translateY(-110%)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:78px}
-.brand{display:flex;align-items:center;gap:10px;font:600 23px "Clash Display","General Sans",sans-serif;letter-spacing:-.02em}
-.brand svg{width:34px;height:34px;transition:transform .8s var(--ease)}
-.brand:hover svg{transform:rotate(180deg)}
+.brand{display:flex;align-items:center;gap:8px;direction:ltr}
+.foot .brand{color:var(--ice)}
+.brand .bm{width:42px;height:31px;flex:none;--mk-ring:3.6;--mk-line:3.4;--mk-sw:.6;transition:transform .8s var(--ease)}
+.brand:hover .bm{transform:rotate(180deg)}
+.brand .bw{width:86px;height:27px;flex:none}
 .nav-links{display:flex;gap:30px;font-size:15px}
 .nav-links a{position:relative;opacity:.8;transition:opacity .2s}
 .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
@@ -108,7 +112,7 @@ html.js:not(.reduced) #loader{display:flex;animation:lgone .01s 6s forwards}
 /* hero */
 .hero{position:relative;height:100svh;min-height:680px;overflow:hidden;background:radial-gradient(1000px 760px at 76% 46%,rgba(11,46,122,.55),transparent 66%),var(--void)}
 #gl{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y}
-.hero-fallback{position:absolute;right:10vw;top:48%;width:min(30vw,400px);transform:translateY(-50%)}
+.hero-fallback{position:absolute;right:8vw;top:44%;width:min(38vw,540px);transform:translateY(-50%)}
 html.gl-on .hero-fallback{display:none}
 .hero-meta{position:absolute;top:104px;left:0;right:0;pointer-events:none}
 .hero-meta .wrap{display:flex;justify-content:space-between;gap:20px;font-size:13px;color:var(--fog);letter-spacing:.04em}
@@ -137,7 +141,7 @@ html.gl-on .hero-fallback{display:none}
   .hero-side{margin-top:24px}
   .hero-side p{font-size:16px}
   .hero-hint,.scroll-cue,.hero-meta{display:none}
-  .hero-fallback{right:50%;top:26%;transform:translate(50%,-50%);width:min(44vw,220px)}
+  .hero-fallback{right:50%;top:24%;transform:translate(50%,-50%);width:min(76vw,340px)}
 }
 
 /* reveal system (only when animation is on) */
@@ -154,7 +158,7 @@ html.anim .split.in .wi{transform:none}
 .manifesto em{font-style:normal}
 .manifesto .hl{color:var(--azure)}
 .manifesto .sig{margin-top:56px;display:flex;gap:16px;align-items:center;color:var(--fog);font-size:15px}
-.manifesto .sig svg{width:28px;height:28px;color:var(--ice)}
+.manifesto .sig svg{width:38px;height:28px;flex:none;color:var(--ice);--mk-ring:3.8;--mk-line:3.6;--mk-sw:.65}
 
 /* chaos -> flow */
 .chaos{position:relative;height:330vh;background:var(--paper);color:var(--ink)}
@@ -203,7 +207,7 @@ html:not(.anim) .face-b{opacity:1}
 .marquee{overflow:hidden;padding-block:clamp(44px,7vw,96px)}
 .mq{display:flex;width:max-content;will-change:transform}
 .mq .run{display:flex;align-items:center;gap:.32em;padding-right:.32em;font:600 clamp(64px,11vw,210px)/1 var(--display);letter-spacing:-.04em;word-spacing:.12em;white-space:nowrap}
-.mq svg{width:.62em;height:.62em;flex:none;color:var(--ice)}
+.mq svg{width:.85em;height:.62em;flex:none;color:var(--ice);--mk-ring:2.6;--mk-line:2.4;--mk-sw:.3}
 .mq .o{color:transparent;-webkit-text-stroke:1.5px rgba(238,243,250,.45)}
 
 /* program */
@@ -473,7 +477,7 @@ html[dir=rtl] input[type=range]::-webkit-slider-runnable-track{background:linear
 html[dir=rtl] .odo{direction:ltr;justify-content:flex-end}
 @media (min-width:901px){
   html[dir=rtl] .hero{background:radial-gradient(1000px 760px at 24% 46%,rgba(11,46,122,.55),transparent 66%),var(--void)}
-  html[dir=rtl] .hero-fallback{right:auto;left:10vw}
+  html[dir=rtl] .hero-fallback{right:auto;left:8vw}
 }
 @media (max-width:420px){.bname{display:none}.nav .btn{padding:11px 16px;font-size:13px}.nav-right{gap:10px}}
 
@@ -485,13 +489,18 @@ if(l==="ar"){d.lang="ar";d.dir="rtl"}else{d.lang="en";d.dir="ltr"}})()</script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <symbol id="mark" viewBox="0 0 100 100">
-    <g fill="none" stroke-width="12" stroke-linecap="round">
-      <path d="M66.45 21.5 A19 19 0 1 0 41.97 48.22" stroke="#1AA3F0"/>
-      <path d="M58.03 51.78 A19 19 0 1 1 33.55 78.5" stroke="currentColor"/>
+  <!-- Synapse mark: two nodes and the spark that jumps the gap between them. Ring/line colour follows currentColor,
+       the spark is azure. --mk-ring/--mk-line/--mk-sw thicken the strokes where the mark is drawn small. -->
+  <symbol id="mark" viewBox="8 22 104 76">
+    <g fill="none" stroke="currentColor" stroke-linecap="round">
+      <path style="stroke-width:var(--mk-line,1.4)" d="M31 42L47 52M73 68L89 78"/>
+      <circle style="stroke-width:var(--mk-ring,1.6)" cx="24" cy="38" r="6.5"/><circle style="stroke-width:var(--mk-ring,1.6)" cx="96" cy="82" r="6.5"/>
     </g>
-    <circle cx="66.45" cy="21.5" r="9" fill="#1AA3F0"/><circle cx="33.55" cy="78.5" r="9" fill="currentColor"/><circle cx="50" cy="50" r="3.4" fill="#7FD3FF"/>
+    <g transform="translate(60 60) scale(2.1)" style="fill:var(--mk-spark,#1AA3F0);stroke:var(--mk-spark,#1AA3F0);stroke-width:var(--mk-sw,0);stroke-linejoin:round">
+      <path d="M0-10L.9 0 0 10-.9 0Z"/><path d="M-7 0L0 .9 7 0 0-.9Z"/><path d="M0-3.6L.6 0 0 3.6-.6 0Z" transform="rotate(45)"/><path d="M0-3.6L.6 0 0 3.6-.6 0Z" transform="rotate(-45)"/>
+    </g>
   </symbol>
+  <symbol id="wordmark" viewBox="2 -66 257 81"><path fill="currentColor" d="M21.17 0.86Q13.46 0.86 8.53 -3.17Q3.6 -7.2 2.52 -13.9L9.65 -15.62Q10.44 -10.73 13.61 -8.21Q16.78 -5.69 21.38 -5.69Q24.05 -5.69 26.1 -6.66Q28.15 -7.63 29.38 -9.47Q30.6 -11.3 30.6 -13.61Q30.6 -16.06 29.27 -17.64Q27.94 -19.22 25.52 -20.48Q23.11 -21.74 19.73 -23.04Q15.34 -24.7 12.2 -26.64Q9.07 -28.58 7.38 -31.28Q5.69 -33.98 5.69 -37.8Q5.69 -41.69 7.6 -44.68Q9.5 -47.66 12.96 -49.39Q16.42 -51.12 20.95 -51.12Q25.78 -51.12 29.56 -48.92Q33.34 -46.73 35.57 -42.34L29.74 -38.74Q28.15 -41.62 25.88 -43.13Q23.62 -44.64 20.74 -44.64Q18.5 -44.64 16.74 -43.78Q14.98 -42.91 14 -41.44Q13.03 -39.96 13.03 -37.94Q13.03 -35.86 14.22 -34.34Q15.41 -32.83 17.75 -31.64Q20.09 -30.46 23.62 -29.16Q28.08 -27.43 31.25 -25.45Q34.42 -23.47 36.14 -20.74Q37.87 -18 37.87 -14.04Q37.87 -9.72 35.75 -6.37Q33.62 -3.02 29.88 -1.08Q26.14 0.86 21.17 0.86Z M45.29 14.62 52.2 -2.09 38.52 -35.5H46.3L55.94 -9.14L65.74 -35.5H73.37L52.99 14.62Z M78.41 0V-35.5H85.54V-30.53Q86.11 -31.46 86.83 -32.26Q88.56 -34.13 90.97 -35.14Q93.38 -36.14 96.19 -36.14Q102.1 -36.14 105.44 -32.72Q108.79 -29.3 108.79 -22.75V0H101.74V-20.16Q101.74 -25.27 99.9 -27.65Q98.06 -30.02 94.25 -30.02Q91.37 -30.02 89.46 -28.73Q87.55 -27.43 86.54 -24.62Q85.54 -21.82 85.54 -17.5V0Z M139.97 0 139.54 -5.18Q139.46 -5.11 139.39 -5.04Q137.52 -2.23 134.75 -0.79Q131.98 0.65 128.52 0.65Q124.56 0.65 121.54 -0.79Q118.51 -2.23 116.86 -4.79Q115.2 -7.34 115.2 -10.73Q115.2 -13.68 116.42 -15.8Q117.65 -17.93 119.59 -19.08Q121.39 -20.23 123.73 -20.7Q126.07 -21.17 128.74 -21.17H139.39V-22.32Q139.39 -26.06 137.23 -28.08Q135.07 -30.1 130.97 -30.1Q128.09 -30.1 125.46 -28.94Q122.83 -27.79 120.46 -25.2L116.06 -29.74Q119.23 -33.05 123.08 -34.6Q126.94 -36.14 131.47 -36.14Q138.6 -36.14 142.52 -32.51Q146.45 -28.87 146.45 -22.32V0ZM139.39 -15.84H129.74Q128.3 -15.84 126.76 -15.59Q125.21 -15.34 124.13 -14.54Q123.26 -13.9 122.76 -12.92Q122.26 -11.95 122.26 -10.66Q122.26 -8.14 124.2 -6.62Q126.14 -5.11 129.38 -5.11Q132.12 -5.11 134.39 -6.37Q136.66 -7.63 138.02 -9.83Q139.39 -12.02 139.39 -14.83Z M154.37 14.69V-35.5H161.42V-30.67Q161.78 -31.18 162.22 -31.68Q164.02 -33.91 166.61 -35.03Q169.2 -36.14 172.37 -36.14Q177.12 -36.14 180.68 -33.73Q184.25 -31.32 186.19 -27.14Q188.14 -22.97 188.14 -17.71Q188.14 -12.1 186.05 -7.96Q183.96 -3.82 180.36 -1.58Q176.76 0.65 172.37 0.65Q169.2 0.65 166.57 -0.58Q163.94 -1.8 162.14 -4.03Q161.78 -4.46 161.42 -4.97V14.69ZM170.86 -5.83Q173.95 -5.83 176.22 -7.31Q178.49 -8.78 179.78 -11.48Q181.08 -14.18 181.08 -17.71Q181.08 -21.24 179.78 -23.94Q178.49 -26.64 176.22 -28.15Q173.95 -29.66 170.86 -29.66Q167.83 -29.66 165.56 -28.15Q163.3 -26.64 162.04 -23.94Q160.78 -21.24 160.78 -17.71Q160.78 -14.18 162.04 -11.48Q163.3 -8.78 165.56 -7.31Q167.83 -5.83 170.86 -5.83Z M206.86 0.65Q203.11 0.65 200.23 -0.47Q197.35 -1.58 195.3 -3.35Q193.25 -5.11 192.02 -6.98L196.85 -11.16Q198.22 -8.71 200.77 -6.95Q203.33 -5.18 206.93 -5.18Q210.1 -5.18 211.93 -6.52Q213.77 -7.85 213.77 -10.01Q213.77 -11.74 212.62 -12.78Q211.46 -13.82 209.59 -14.51Q207.72 -15.19 205.49 -15.7Q203.47 -16.27 201.38 -16.99Q199.3 -17.71 197.6 -18.83Q195.91 -19.94 194.87 -21.71Q193.82 -23.47 193.82 -26.06Q193.82 -30.6 197.32 -33.37Q200.81 -36.14 206.57 -36.14Q210.67 -36.14 214.06 -34.45Q217.44 -32.76 219.31 -29.45L214.92 -26.06Q213.48 -28.44 211.21 -29.52Q208.94 -30.6 206.28 -30.6Q203.76 -30.6 202.07 -29.56Q200.38 -28.51 200.38 -26.71Q200.38 -25.42 201.13 -24.59Q201.89 -23.76 203.51 -23.15Q205.13 -22.54 207.5 -21.96Q209.74 -21.46 212.04 -20.74Q214.34 -20.02 216.29 -18.86Q218.23 -17.71 219.46 -15.77Q220.68 -13.82 220.68 -10.73Q220.68 -7.34 218.95 -4.79Q217.22 -2.23 214.13 -0.79Q211.03 0.65 206.86 0.65Z M242.64 0.65Q238.32 0.65 235.15 -0.79Q231.98 -2.23 229.9 -4.79Q227.81 -7.34 226.76 -10.62Q225.72 -13.9 225.72 -17.5Q225.72 -21.1 226.73 -24.44Q227.74 -27.79 229.75 -30.42Q231.77 -33.05 234.83 -34.6Q237.89 -36.14 242.06 -36.14Q246.24 -36.14 249.26 -34.74Q252.29 -33.34 254.23 -30.85Q256.18 -28.37 257.15 -25.27Q258.12 -22.18 258.12 -18.72Q258.12 -18.36 258.08 -17.39Q258.05 -16.42 257.9 -15.55H232.78Q232.99 -10.8 235.69 -8.24Q238.39 -5.69 242.86 -5.69Q245.88 -5.69 248.26 -6.66Q250.63 -7.63 252.65 -9.72L256.97 -5.26Q254.88 -3.17 252.68 -1.87Q250.49 -0.58 248.08 0.04Q245.66 0.65 242.64 0.65ZM251.35 -20.74Q251.35 -21.1 251.35 -21.38Q251.35 -23.04 250.78 -24.62Q250.2 -26.21 249.05 -27.47Q247.9 -28.73 246.2 -29.48Q244.51 -30.24 242.28 -30.24Q239.33 -30.24 237.24 -28.91Q235.15 -27.58 234.04 -25.42Q232.92 -23.26 232.7 -20.74Z"/></symbol>
   <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
 
@@ -499,14 +508,14 @@ if(l==="ar"){d.lang="ar";d.dir="rtl"}else{d.lang="en";d.dir="ltr"}})()</script>
 <div class="cursor" id="cRing" aria-hidden="true"><i></i></div>
 
 <div id="loader" aria-hidden="true">
-  <svg viewBox="0 0 100 100"><g fill="none" stroke-width="12" stroke-linecap="round"><path class="la" pathLength="100" d="M66.45 21.5 A19 19 0 1 0 41.97 48.22" stroke="#1AA3F0"/><path class="lb" pathLength="100" d="M58.03 51.78 A19 19 0 1 1 33.55 78.5" stroke="#EEF3FA"/></g><circle class="ln" cx="50" cy="50" r="3.6" fill="#7FD3FF"/></svg>
+  <svg viewBox="8 22 104 76"><g fill="none" stroke="#EEF3FA" stroke-width="2.2" stroke-linecap="round"><circle class="la" pathLength="100" cx="24" cy="38" r="6.5" transform="rotate(31.4 24 38)"/><path class="la" pathLength="100" d="M31 42L47 52" style="animation-delay:.25s"/><path class="la" pathLength="100" d="M73 68L89 78" style="animation-delay:.6s"/><circle class="la" pathLength="100" cx="96" cy="82" r="6.5" transform="rotate(211.4 96 82)" style="animation-delay:.75s"/></g><g class="ln"><g transform="translate(60 60) scale(2.1)" fill="#1AA3F0"><path d="M0-10L.9 0 0 10-.9 0Z"/><path d="M-7 0L0 .9 7 0 0-.9Z"/><path d="M0-3.6L.6 0 0 3.6-.6 0Z" transform="rotate(45)"/><path d="M0-3.6L.6 0 0 3.6-.6 0Z" transform="rotate(-45)"/></g></g></svg>
   <span id="loaderNum">000</span>
 </div>
 
 <div id="progress" aria-hidden="true"></div>
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="#top" aria-label="Synapse System Solutions, back to top"><svg aria-hidden="true"><use href="#mark"/></svg><span class="bname">Synapse</span></a>
+    <a class="brand" href="#top" aria-label="Synapse System Solutions, back to top"><svg class="bm" aria-hidden="true"><use href="#mark"/></svg><svg class="bw bname" aria-hidden="true"><use href="#wordmark"/></svg></a>
     <nav class="nav-links" aria-label="Main">
       <a href="#program">How it works</a><a href="#services">What we fix</a><a href="#labs">Labs</a><a href="#pricing">Pricing</a>
     </nav>
@@ -518,7 +527,7 @@ if(l==="ar"){d.lang="ar";d.dir="rtl"}else{d.lang="en";d.dir="ltr"}})()</script>
   <!-- HERO -->
   <section class="hero" id="hero" aria-labelledby="heroTitle">
     <canvas id="gl" aria-hidden="true"></canvas>
-    <svg class="hero-fallback" viewBox="0 0 100 100" aria-hidden="true" style="color:#EEF3FA"><use href="#mark"/></svg>
+    <svg class="hero-fallback" viewBox="0 0 104 76" aria-hidden="true" style="color:#EEF3FA"><use href="#mark"/></svg>
     <div class="hero-meta"><div class="wrap"><span>24.71° N, 46.67° E</span><span><span class="ar">سينابس</span> · Operations &amp; AI</span></div></div>
     <div class="hero-content">
       <div class="wrap">
@@ -790,7 +799,7 @@ if(l==="ar"){d.lang="ar";d.dir="rtl"}else{d.lang="en";d.dir="ltr"}})()</script>
         </form>
       </div>
       <footer class="foot">
-        <a class="brand" href="#top"><svg aria-hidden="true"><use href="#mark"/></svg>Synapse</a>
+        <a class="brand" href="#top" aria-label="Synapse System Solutions, back to top"><svg class="bm" aria-hidden="true"><use href="#mark"/></svg><svg class="bw" aria-hidden="true"><use href="#wordmark"/></svg></a>
         <nav aria-label="Footer"><a href="#program">How it works</a><a href="#services">What we fix</a><a href="#labs">Labs</a><a href="#pricing">Pricing</a></nav>
         <span>Riyadh <span data-clock>--:--:--</span> · © 2026 Synapse System Solutions · Commercial registration in progress</span>
       </footer>
@@ -893,7 +902,7 @@ safe("nav",()=>{
 const fmt=()=>{try{return new Intl.DateTimeFormat("en-GB",{hour:"2-digit",minute:"2-digit",second:"2-digit",timeZone:"Asia/Riyadh"}).format(new Date())}catch(e){return""}};
 const tick=()=>$$("[data-clock]").forEach(el=>el.textContent=fmt());tick();setInterval(tick,1000);
 
-/* ---------- hero: the S as a particle nervous system ---------- */
+/* ---------- hero: the Synapse mark as a particle nervous system ---------- */
 safe("gl",()=>{
   if(typeof THREE==="undefined")return;
   const cv=$("#gl"),hero=$("#hero");
@@ -903,26 +912,31 @@ safe("gl",()=>{
   const PR=Math.min(devicePixelRatio||1,2);renderer.setPixelRatio(PR);
   const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(45,1,.1,100);cam.position.z=10;
   const small=innerWidth<700;
-  const NS=small?3000:5800,NA=small?900:2200,N=NS+NA;
+  const NS=small?2600:5000,NA=small?900:2200,N=NS+NA;
   const tgt=new Float32Array(N*3),cha=new Float32Array(N*3),siz=new Float32Array(N),arc=new Float32Array(N),sd=new Float32Array(N),col=new Float32Array(N*3);
-  const K=.062,toW=(px,py)=>[(px-50)*K,-(py-50)*K];
+  // mark coordinates are the logo's own (#mark symbol): nodes at (24,38) and (96,82), spark centred on (60,60)
+  const K=.066,toW=(px,py)=>[(px-60)*K,-(py-60)*K];
   const cA=new THREE.Color("#1AA3F0"),cB=new THREE.Color("#DCEBFF"),cS=new THREE.Color("#9FE0FF"),cM=new THREE.Color("#2F63D6");
   const rnd=(a,b)=>a+Math.random()*(b-a);
   const ball=r=>{const u=Math.random(),v=Math.random(),th=2*Math.PI*u,ph=Math.acos(2*v-1),rr=r*Math.cbrt(Math.random());return[rr*Math.sin(ph)*Math.cos(th),rr*Math.sin(ph)*Math.sin(th),rr*Math.cos(ph)]};
-  for(let i=0;i<N;i++){
-    // aArc runs 0..1 along the top arc, 1.12 at the spark, 1.25..2.25 along the bottom arc; -1 is ambient dust
-    let px,py,a=-1,s=rnd(2,3.4),c=cA,z=rnd(-.3,.3);
-    if(i<NS){const k=Math.random();
-      if(k<.42){const u=Math.random(),th=(-30-u*215)*Math.PI/180,rr=19+rnd(-5.4,5.4);px=50+rr*Math.cos(th);py=31+rr*Math.sin(th);a=u}
-      else if(k<.84){const u=Math.random(),th=(-65+u*215)*Math.PI/180,rr=19+rnd(-5.4,5.4);px=50+rr*Math.cos(th);py=69+rr*Math.sin(th);a=1.25+u;c=cB}
-      else if(k<.915){const t=Math.random()*6.283,rr=8.6*Math.sqrt(Math.random());px=66.45+rr*Math.cos(t);py=21.5+rr*Math.sin(t);a=0;s=rnd(2.2,3.5)}
-      else if(k<.99){const t=Math.random()*6.283,rr=8.6*Math.sqrt(Math.random());px=33.55+rr*Math.cos(t);py=78.5+rr*Math.sin(t);a=2.25;c=cB;s=rnd(2.2,3.5)}
-      else{const t=Math.random()*6.283,rr=3.4*Math.sqrt(Math.random());px=50+rr*Math.cos(t);py=50+rr*Math.sin(t);a=1.12;c=cS;s=rnd(3,4.6)}
-      const w=toW(px,py);tgt[i*3]=w[0];tgt[i*3+1]=w[1];tgt[i*3+2]=z;
-      const b=ball(6.5);cha[i*3]=b[0]*1.6;cha[i*3+1]=b[1]*1.1;cha[i*3+2]=b[2]*.6;
-    }else{const b=ball(10);tgt[i*3]=b[0]*1.2;tgt[i*3+1]=b[1]*.8;tgt[i*3+2]=b[2]*.5-4;cha[i*3]=tgt[i*3]*1.15;cha[i*3+1]=tgt[i*3+1]*1.15;cha[i*3+2]=tgt[i*3+2];s=rnd(.9,2);c=cM}
+  // a point inside a spark diamond (half-length L, half-width w), rotated by ang
+  const dia=(L,w,ang)=>{let u,v;do{u=rnd(-1,1);v=rnd(-1,1)}while(Math.abs(u)+Math.abs(v)>1);const x=v*w,y=u*L,c=Math.cos(ang),n=Math.sin(ang);return[x*c-y*n,x*n+y*c,1-Math.abs(u)-Math.abs(v)]};
+  const LN=[[31,42,47,52],[73,68,89,78]],SC=2.1;
+  for(let i=0;i<NS;i++){
+    // aArc runs ~0 at node A, .15..1 along the first line, 1.12 at the spark, 1.25..2.1 along the second line, ~2.25 at node B; -1 is ambient dust.
+    // Node particles get a spread of values so the passing signal sparkles across the ring instead of lighting it all at once.
+    let px,py,a=-1,s=rnd(1.8,3),c=Math.random()<.3?cA:cB,z=rnd(-.25,.25);const k=Math.random();
+    if(k<.42){const B=k<.21,t=Math.random()*6.283,rr=6.5+rnd(-1.15,1.15);px=(B?96:24)+rr*Math.cos(t);py=(B?82:38)+rr*Math.sin(t);a=B?2.25+rnd(-.1,.25):rnd(-.25,.1)}
+    else if(k<.62){const B=k<.52,l=LN[B?1:0],u=Math.random(),o=rnd(-.8,.8);px=l[0]+(l[2]-l[0])*u-.5215*o;py=l[1]+(l[3]-l[1])*u+.8533*o;a=B?1.25+u*.85:.15+u*.85}
+    else{const q=Math.random();let p;
+      if(q<.44)p=dia(10*SC,.9*SC,0);else if(q<.76)p=dia(7*SC,.9*SC,Math.PI/2);else if(q<.88)p=dia(3.6*SC,.6*SC,Math.PI/4);else p=dia(3.6*SC,.6*SC,-Math.PI/4);
+      px=60+p[0];py=60+p[1];a=1.12;c=p[2]>.6?cS:Math.random()<.6?cA:cS;s=rnd(1.8,2.8)+p[2]*2.2;z=rnd(-.12,.12)}
+    const w=toW(px,py);tgt[i*3]=w[0];tgt[i*3+1]=w[1];tgt[i*3+2]=z;
+    const b=ball(6.5);cha[i*3]=b[0]*1.6;cha[i*3+1]=b[1]*1.1;cha[i*3+2]=b[2]*.6;
     siz[i]=s;arc[i]=a;sd[i]=Math.random();col[i*3]=c.r;col[i*3+1]=c.g;col[i*3+2]=c.b;
   }
+  for(let i=NS;i<N;i++){const b=ball(10),c=cM;tgt[i*3]=b[0]*1.2;tgt[i*3+1]=b[1]*.8;tgt[i*3+2]=b[2]*.5-4;cha[i*3]=tgt[i*3]*1.15;cha[i*3+1]=tgt[i*3+1]*1.15;cha[i*3+2]=tgt[i*3+2];
+    siz[i]=rnd(.9,2);arc[i]=-1;sd[i]=Math.random();col[i*3]=c.r;col[i*3+1]=c.g;col[i*3+2]=c.b}
   const geo=new THREE.BufferGeometry();
   geo.setAttribute("position",new THREE.BufferAttribute(new Float32Array(tgt),3));
   geo.setAttribute("aTarget",new THREE.BufferAttribute(tgt,3));
@@ -965,7 +979,7 @@ safe("gl",()=>{
   let W=1,H=1,vw=1,vh=1,offX=0,offY=0,sc=1;
   const resize=()=>{const r=hero.getBoundingClientRect();W=Math.max(1,r.width);H=Math.max(1,r.height);renderer.setSize(W,H,false);cam.aspect=W/H;cam.updateProjectionMatrix();
     vh=2*cam.position.z*Math.tan(cam.fov*Math.PI/360);vw=vh*cam.aspect;const wide=W>900;
-    if(wide){sc=Math.min(1.15,vh/7.4,vw*.3/3.1);offX=(RTL?-1:1)*vw*.24;offY=.17}else{sc=Math.min(.82,vw/8.4,vh/15);offX=0;offY=vh*.26}
+    if(wide){sc=Math.min(1.2,vh*.5/3.8,vw*.42/5.6);offX=(RTL?-1:1)*vw*.24;offY=vh*.05}else{sc=Math.min(.82,vw*.76/5.6,vh*.28/3.8);offX=0;offY=vh*.255}
     grp.position.set(offX,offY,0);grp.scale.setScalar(sc)};
   resize();new ResizeObserver(resize).observe(hero);
   let tmx=99,tmy=99,mx=99,my=99,rotT=0;

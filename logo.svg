@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Synapse System Solutions">
-  <!-- Two arcs that never touch. The gap in the middle is the synapse: the signal jumps it. -->
-  <g fill="none" stroke-width="12" stroke-linecap="round">
-    <path d="M66.45 21.5 A19 19 0 1 0 41.97 48.22" stroke="#1AA3F0"/>
-    <path d="M58.03 51.78 A19 19 0 1 1 33.55 78.5" stroke="#0B2E7A"/>
-  </g>
-  <circle cx="66.45" cy="21.5" r="9" fill="#1AA3F0"/>
-  <circle cx="33.55" cy="78.5" r="9" fill="#0B2E7A"/>
-  <circle cx="50" cy="50" r="3.2" fill="#1AA3F0"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="8 8 104 104" role="img" aria-label="Synapse System Solutions"><title>Synapse System Solutions</title><style>.n{fill:#0B2E7A;stroke:#0B2E7A}.s{fill:#1AA3F0}@media (prefers-color-scheme:dark){.n{fill:#EEF3FA;stroke:#EEF3FA}}</style><g class="n"><path stroke-width="6" stroke-linecap="round" d="M33 44L45 51M75 69L87 76"/><circle cx="24" cy="38" r="12"/><circle cx="96" cy="82" r="12"/></g><g class="s" transform="translate(60 60) scale(2.5)"><path d="M0-10L2.4 0 0 10-2.4 0Z"/><path d="M-7 0L0 2.4 7 0 0-2.4Z"/></g></svg>
